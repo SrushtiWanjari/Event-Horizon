@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')).render(
    <BrowserRouter>
       <div className="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
         <Navbar />
-        <div className="container ">
+        <div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/browse" element={<BrowseEvents />} />
