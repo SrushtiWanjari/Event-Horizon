@@ -24,6 +24,18 @@ function Home() {
           ))}
         </div>
       </div>
+
+      <div className="mt-20">
+      <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 border-b border-gray-700 pb-2 pl-10">Event Distribution</h2>
+      <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+        <p className="text-lg text-gray-300 mb-2">Current events are distributed as follows:</p>
+        <ul className="list-disc list-inside space-y-1 text-left inline-block">
+          <li className="text-gray-400">2 Music events</li>
+          <li className="text-gray-400">2 Food events</li>
+          <li className="text-gray-400">1 Workshop event</li>
+        </ul>
+      </div>
+    </div>
     </div>
   );
 }
