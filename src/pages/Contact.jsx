@@ -1,17 +1,28 @@
 import React from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 function Contact() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    toast.success("Your message has been sent successfully!", {
+      style: {
+        background: "#333",
+        color: "#fff",
+      },
+    });
+  };
+
   return (
     <div>
+      <Toaster position="top-center"/>
       <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-15 border-b border-gray-700 pb-2 pl-10 mt-10">
         Get in Touch
       </h2>
-      <div className="flex">
-        <div className="mt-10 border-1  p-5 w-100 rounded-lg ml-10 h-fit static ">
-          <div className="bg-sky-800 w-7 h-7 rounded-3xl absolute top-65 right-266 animate-ping"></div>
-          <div className="bg-sky-800 w-5 h-5 rounded-3xl absolute top-66 right-267 "></div>
-          <div className="text-center text-gray-400  ">
+      <div className="flex items-center">
+        <div className="mt-10 border-1 p-5 w-100 rounded-lg ml-10 h-fit static ">
+          <div className="bg-sky-800 w-7 h-7 rounded-3xl absolute top-97 right-266 animate-ping"></div>
+          <div className="bg-sky-800 w-5 h-5 rounded-3xl absolute top-98 right-267 "></div>
+          <div className="text-center text-gray-400 ">
             <p className="pb-3 font-bold text-2xl text-sky-500">
               You can also reach us directly:
             </p>
@@ -33,7 +44,7 @@ function Contact() {
             Have questions, suggestions, or feedback about Event Horizon? We'd
             love to hear from you!
           </p>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label className="block text-gray-300 font-bold mb-2">
                 Your Name
