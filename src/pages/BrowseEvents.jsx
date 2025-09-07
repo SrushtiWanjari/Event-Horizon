@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import EventCard from '../components/EventCard.jsx';
+import InitialEvents from '../data/InitialEvents.js'; // Import the InitialEvents data
 
 const BrowseEvents = () => {
-  const [filter, setFilter] = useState(all);
-  const [allEvents, setAllEvents] = useState(initialEvents);
+  const [filter, setFilter] = useState('all');
+  const [allEvents, setAllEvents] = useState(InitialEvents);
 
   useEffect(() => {
     try {
       const storedEvents = JSON.parse(localStorage.getItem('submittedEvents')) || [];
-      const mergedEvents = [...initialEvents, ...storedEvents];
+      const mergedEvents = [...InitialEvents, ...storedEvents];
       setAllEvents(mergedEvents);
     } catch (error) {
       console.error("Failed to load events from local storage:", error);
@@ -18,8 +20,9 @@ const BrowseEvents = () => {
     if (filter === 'all') return true;
     return event.category === filter || event.day === filter;
   });
+
   return (
-    <div>
+    <div className="ml-10 mt-20">
       <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 border-b border-gray-700 pb-2">All Local Events</h2>
       <div className="flex flex-wrap gap-4 mb-8 text-sm">
         {['all', 'today', 'this-week', 'music', 'food', 'workshops'].map(category => (
@@ -33,12 +36,13 @@ const BrowseEvents = () => {
         ))}
       </div>
 
-       <div id="event-cards-grid" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="flex flex-col sm:flex-col lg:flex-row flex-wrap gap-8">
         {filteredEvents.map(event => (
           <EventCard key={event.id} event={event} />
         ))}
       </div>
     </div>
-  )
-}
-export default BrowseEvents
+  );
+};
+
+export default BrowseEvents;
