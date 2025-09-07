@@ -36,7 +36,7 @@ const BrowseEvents = () => {
         ))}
       </div>
 
-      <div className="flex flex-col sm:flex-col lg:flex-row flex-wrap gap-8">
+      <div className="flex flex-col sm:flex-col lg:flex-row flex-wrap gap-16">
         {filteredEvents.map(event => (
           <EventCard key={event.id} event={event} />
         ))}
