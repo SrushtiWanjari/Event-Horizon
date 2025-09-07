@@ -19,8 +19,9 @@ const BrowseEvents = () => {
     return event.category === filter || event.day === filter;
   });
   return (
-    <>
-    </>
+    <div>
+      <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 border-b border-gray-700 pb-2">All Local Events</h2>
+    </div>
   )
 }
 export default BrowseEvents
