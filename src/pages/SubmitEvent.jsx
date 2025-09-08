@@ -51,6 +51,12 @@ function SubmitEvent() {
             <label className="block text-gray-300 font-bold mb-2">Description</label>
             <textarea  name="description" value={formData.description} onChange={handleChange} rows="4" className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all" required></textarea>
           </div>
+            <div className="flex flex-col md:flex-col gap-4 mb-4">
+            <div>
+              <label htmlFor="eventDate" className="block text-gray-300 font-bold mb-2">Date</label>
+              <input type="date" id="eventDate" name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all" required />
+            </div>
+          </div>
         </form>
   </div>
 );
