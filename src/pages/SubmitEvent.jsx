@@ -61,6 +61,16 @@ function SubmitEvent() {
               <input type="text"  name="location" value={formData.location} onChange={handleChange} className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all" required />
             </div>
           </div>
+
+          <div className="mb-6">
+            <label  className="block text-gray-300 font-bold mb-2">Category</label>
+            <select  name="category" value={formData.category} onChange={handleChange} className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all" required>
+              <option value="">Select a category</option>
+              <option value="music">Music</option>
+              <option value="food">Food</option>
+              <option value="workshops">Workshops</option>
+            </select>
+          </div>
         </form>
   </div>
 );
