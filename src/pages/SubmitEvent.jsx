@@ -38,43 +38,91 @@ function SubmitEvent() {
     }
   };
 
-  return(
-  <div>
-    <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 border-b border-gray-700 pb-2">Submit Your Event</h2>
+  return (
+    <div>
+      <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 border-b border-gray-700 pb-2">
+        Submit Your Event
+      </h2>
       <div className="max-w-xl mx-auto bg-gray-800 rounded-lg p-8 shadow-lg"></div>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label  className="block text-gray-300 font-bold mb-2">Event Title</label>
-            <input type="text"  name="title" value={formData.title} onChange={handleChange} className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all" required />
+      <form onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <label className="block text-gray-300 font-bold mb-2">
+            Event Title
+          </label>
+          <input
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-300 font-bold mb-2">
+            Description
+          </label>
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            rows="4"
+            className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+            required
+          ></textarea>
+        </div>
+        <div className="flex flex-col md:flex-col gap-4 mb-4">
+          <div>
+            <label className="block text-gray-300 font-bold mb-2">Date</label>
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+              required
+            />
           </div>
-           <div className="mb-4">
-            <label className="block text-gray-300 font-bold mb-2">Description</label>
-            <textarea  name="description" value={formData.description} onChange={handleChange} rows="4" className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all" required></textarea>
+          <div>
+            <label className="block text-gray-300 font-bold mb-2">
+              Location
+            </label>
+            <input
+              type="text"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+              required
+            />
           </div>
-            <div className="flex flex-col md:flex-col gap-4 mb-4">
-            <div>
-              <label  className="block text-gray-300 font-bold mb-2">Date</label>
-              <input type="date"  name="date" value={formData.date} onChange={handleChange} className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all" required />
-            </div>
-            <div>
-              <label  className="block text-gray-300 font-bold mb-2">Location</label>
-              <input type="text"  name="location" value={formData.location} onChange={handleChange} className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all" required />
-            </div>
-          </div>
+        </div>
 
-          <div className="mb-6">
-            <label  className="block text-gray-300 font-bold mb-2">Category</label>
-            <select  name="category" value={formData.category} onChange={handleChange} className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all" required>
-              <option value="">Select a category</option>
-              <option value="music">Music</option>
-              <option value="food">Food</option>
-              <option value="workshops">Workshops</option>
-            </select>
-          </div>
-        </form>
-  </div>
-);
+        <div className="mb-6">
+          <label className="block text-gray-300 font-bold mb-2">Category</label>
+          <select
+            name="category"
+            value={formData.category}
+            onChange={handleChange}
+            className="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+            required
+          >
+            <option value="">Select a category</option>
+            <option value="music">Music</option>
+            <option value="food">Food</option>
+            <option value="workshops">Workshops</option>
+          </select>
+        </div>
 
+        <button
+          type="submit"
+          className="w-full bg-teal-500 text-white font-bold py-3 rounded-full hover:bg-teal-600 transition-colors"
+        >
+          Submit Event
+        </button>
+      </form>
+    </div>
+  );
 }
 
 export default SubmitEvent;
