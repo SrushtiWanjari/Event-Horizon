@@ -2,19 +2,34 @@ import React, { useState, useEffect } from "react";
 import EventCard from '../components/EventCard.jsx';
 import InitialEvents from '../data/InitialEvents.js'; 
 
-function BrowseEvents ()  {
+function BrowseEvents () {
   const [filter, setFilter] = useState('all');
-  const [allEvents, setAllEvents] = useState(InitialEvents);
+  const [allEvents, setAllEvents] = useState([]);
+  const [submittedEvents, setSubmittedEvents] = useState([]);
 
   useEffect(() => {
     try {
       const storedEvents = JSON.parse(localStorage.getItem('submittedEvents')) || [];
       const mergedEvents = [...InitialEvents, ...storedEvents];
       setAllEvents(mergedEvents);
+      setSubmittedEvents(storedEvents);
     } catch (error) {
       console.error("Failed to load events from local storage:", error);
     }
   }, []);
+
+  const handleDelete = (eventId) => {
+    // Filter out the event to be deleted from the submitted events list
+    const updatedSubmittedEvents = submittedEvents.filter(event => event.id !== eventId);
+    
+    // Update local storage with the new list of submitted events
+    localStorage.setItem('submittedEvents', JSON.stringify(updatedSubmittedEvents));
+
+    // Update the local state to trigger a re-render
+    const mergedEvents = [...InitialEvents, ...updatedSubmittedEvents];
+    setAllEvents(mergedEvents);
+    setSubmittedEvents(updatedSubmittedEvents);
+  };
 
   const filteredEvents = allEvents.filter(event => {
     if (filter === 'all') return true;
@@ -38,7 +53,7 @@ function BrowseEvents ()  {
 
       <div className="flex flex-col sm:flex-col lg:flex-row flex-wrap gap-16">
         {filteredEvents.map(event => (
-          <EventCard key={event.id} event={event} />
+          <EventCard key={event.id} event={event} onDelete={handleDelete} />
         ))}
       </div>
     </div>

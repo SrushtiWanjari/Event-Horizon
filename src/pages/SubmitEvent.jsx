@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import {  useState } from "react";
+import {useNavigate} from 'react-router';
 
 function SubmitEvent() {
   const [formData, setFormData] = useState({
@@ -71,7 +72,7 @@ function SubmitEvent() {
             required
           ></textarea>
         </div>
-        <div className="flex flex-col md:flex-col gap-4 mb-4">
+        <div className="flex flex-col md:flex-row gap-4 mb-4">
           <div>
             <label className="block text-gray-300 font-bold mb-2">Date</label>
             <input
