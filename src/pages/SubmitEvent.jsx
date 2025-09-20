@@ -40,11 +40,10 @@ function SubmitEvent() {
   };
 
   return (
-    <div>
+    <div className="m-10">
       <h2 className="text-3xl md:text-4xl font-bold text-teal-400 mb-6 border-b border-gray-700 pb-2">
         Submit Your Event
       </h2>
-      <div className="max-w-xl mx-auto bg-gray-800 rounded-lg p-8 shadow-lg"></div>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-gray-300 font-bold mb-2">
