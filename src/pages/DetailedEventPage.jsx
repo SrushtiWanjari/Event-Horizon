@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router";
 import { MapPin, Calendar, Award, UtensilsCrossed, Music } from "lucide-react";
-import InitialEvents from "../data/InitialEvents.js";
+import InitialEvents from "../data/InitialEvents";
 
 function DetailedEventPage() {
   const { id } = useParams();

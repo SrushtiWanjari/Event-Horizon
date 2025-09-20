@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import EventCard from '../components/EventCard.jsx';
-import InitialEvents from '../data/InitialEvents.js'; 
+import InitialEvents from '../data/InitialEvents'; 
 
 function BrowseEvents () {
   const [filter, setFilter] = useState('all');
