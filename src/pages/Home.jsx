@@ -1,6 +1,5 @@
 import React from "react";
 import EventCard from "../components/EventCard.jsx";
-import InitialEvents from "../data/InitialEvents"
 
 function Home() {
   return (
