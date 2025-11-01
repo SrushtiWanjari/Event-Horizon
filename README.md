@@ -1,4 +1,4 @@
-# [🌏 Event Horizon](https://your-deployed-link-here)
+# [🌏 Event Horizon](event-horizon-37k3.vercel.app)
 
 **Event Horizon** is a modern event discovery web application designed to showcase upcoming **Indian events** — including cultural festivals, concerts, tech meetups, and workshops.  
 It features a smooth user experience with scrollable pages, interactive hover effects.
