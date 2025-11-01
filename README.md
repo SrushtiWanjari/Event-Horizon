@@ -44,7 +44,7 @@ Below are some screenshots of the application:
 If you like this project, don’t forget to ⭐ the repo!  
 Your feedback helps improve this project and motivates future updates.  
 
-Thanks for visiting and checking out **To-Do Application** 💙  
+Thanks for visiting and checking out **Event Horizon Application** 💙  
 — *Developed with ❤️ by Srushti Wanjari*
 
 ---
